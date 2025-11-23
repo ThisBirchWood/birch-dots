@@ -1,0 +1,66 @@
+/* ========================
+   Wofi Lovely Theme
+   ======================== */
+
+/* Window styling */
+window {
+    background-color: #1e1e2e; /* Dark blue-ish background */
+    border-radius: 12px;
+    padding: 10px;
+    border: 1px solid #44475a;
+}
+
+/* Entry box styling */
+entry {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 16px;
+    color: #f8f8f2; /* light text */
+    padding: 8px 10px;
+    border-radius: 8px;
+    background-color: #2e2e3e; /* darker input box */
+    border: 1px solid #6272a4;
+}
+
+/* Selected suggestion */
+row:selected {
+    background-color: #6272a4;
+    color: #f8f8f2;
+}
+
+/* Suggestions list */
+row {
+    padding: 6px 10px;
+    border-radius: 6px;
+    margin: 2px 0;
+    transition: background 0.2s ease;
+}
+
+/* Icon styling */
+image {
+    width: 32px;  /* smaller icons */
+    height: 32px;
+    margin-right: 10px;
+}
+
+/* Scrollbar styling */
+scrollbar {
+    background-color: #1e1e2e;
+    width: 6px;
+    border-radius: 3px;
+}
+
+scrollbar slider {
+    background-color: #6272a4;
+    border-radius: 3px;
+}
+
+/* Hint text */
+entry placeholder {
+    color: #bfbfbf;
+}
+
+/* For accessibility: highlight keyboard navigation */
+row:focus {
+    outline: 2px solid #ff79c6;
+}
+
