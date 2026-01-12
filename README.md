@@ -4,3 +4,4 @@
 - thunar
 - wofi
 - adw-gtk-theme
+- zsh-syntax-highlighting
