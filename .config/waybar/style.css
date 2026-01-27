@@ -86,20 +86,10 @@
 }
 
 /* --- Right Modules (Single, Seamless Bar ) --- */
-#pulseaudio {
-  background-color: @Buttons;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  margin-right: 10px;
-  border-radius: 0;
-  box-shadow: none;
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
 #custom-power:hover,
-#pulseaudio:hover {
+#pulseaudio:hover,
+#battery:hover,
+#tray:hover {
   background-color: @Buttonshover;
 }
 
@@ -112,24 +102,22 @@
   font-weight: 500;
 }
 
-#pulseaudio {
+
+#tray, #battery, #pulseaudio, #custom-power {
   background-color: @Buttons;
   color: @Text;
   border-radius: 10px;
+  padding: 0.5rem;
+  margin: 5px;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
-#tray {
+#pulseaudio {
   background-color: @Buttons;
   color: @Text;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  margin-right: 10px;
-
+  padding-right: 1rem;
 }
+
 
 #battery {
   color: @Text;
@@ -141,18 +129,6 @@
   color: @Text;
 }
 
-#custom-power{
-  background-color: @Buttons;
-  color: @Text;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  margin-right: 20px;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
 
 /* --- Tooltip Styles --- */
 tooltip {
