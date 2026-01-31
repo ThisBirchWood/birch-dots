@@ -103,7 +103,7 @@
 }
 
 
-#tray, #battery, #pulseaudio, #custom-power {
+#tray, #battery, #pulseaudio, #custom-power, #custom-micmute {
   background-color: @Buttons;
   color: @Text;
   border-radius: 10px;

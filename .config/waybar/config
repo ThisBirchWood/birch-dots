@@ -14,7 +14,8 @@
 
   "modules-right": [
     "tray",
-    "pulseaudio", 
+    "pulseaudio",
+    "custom/micmute",
     "battery",
     "custom/power"
   ],
@@ -79,5 +80,12 @@
       "tooltip": false,
       "on-click": "wlogout"
     },
+
+  "custom/micmute": {
+  	"exec": "bash -c 'wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && echo \"\" || echo \"\"'",
+  	"interval": 1,
+  	"tooltip": true,
+  	"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+   }
 }
 
