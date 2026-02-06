@@ -1,10 +1,11 @@
 # Requirements
-- hyprland
-- kitty
-- thunar
-- wofi
-- adw-gtk-theme
+- hyprland (Desktop Env)
+- kitty (Terminal)
+- thunar (File Manager)
+- wofi (Application Select Menu)
+- adw-gtk-theme 
 - zsh-syntax-highlighting
+- mako (Notifications)
 
 # Setup
 1) Ensure each requirement is installed
