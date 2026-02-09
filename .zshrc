@@ -23,3 +23,6 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 # Created by `pipx` on 2026-01-15 16:32:17
 export PATH="$PATH:/home/dylan/.local/bin"
+
+# opencode
+export PATH=/home/dylan/.opencode/bin:$PATH
