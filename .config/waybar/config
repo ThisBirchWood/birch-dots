@@ -87,7 +87,7 @@
 
   "custom/micmute": {
   	"exec": "~/.config/waybar/scripts/micmute.sh",
-	"interval": 0,
+	"restart-interval": 1,
   	"tooltip": true,
 	"min-length": 2,
   	"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
