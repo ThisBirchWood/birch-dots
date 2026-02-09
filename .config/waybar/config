@@ -82,9 +82,10 @@
     },
 
   "custom/micmute": {
-  	"exec": "bash -c 'wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | grep -q MUTED && echo \"\" || echo \"\"'",
-  	"interval": 1,
+  	"exec": "~/.config/waybar/scripts/micmute.sh",
+	"interval": 0,
   	"tooltip": true,
+	"min-length": 2,
   	"on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
    }
 }

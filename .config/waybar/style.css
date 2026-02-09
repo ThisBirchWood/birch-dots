@@ -5,7 +5,7 @@
 
 /* --- Global Styles --- */
 * {
-  font-family: 'SF Pro Text', 'Inter', 'Segoe UI, NotoSans Nerd Font', sans-serif;
+  font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 14px;
   min-height: 25px;
   padding-right: 0px;
@@ -89,7 +89,8 @@
 #custom-power:hover,
 #pulseaudio:hover,
 #battery:hover,
-#tray:hover {
+#tray:hover,
+#custom-micmute:hover {
   background-color: @Buttonshover;
 }
 
@@ -107,15 +108,9 @@
   background-color: @Buttons;
   color: @Text;
   border-radius: 10px;
-  padding: 0.5rem;
-  margin: 5px;
+  padding: 0.7rem;
+  margin: 0.35rem;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-#pulseaudio {
-  background-color: @Buttons;
-  color: @Text;
-  padding-right: 1rem;
 }
 
 
