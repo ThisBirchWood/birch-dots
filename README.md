@@ -6,6 +6,7 @@
 - adw-gtk-theme 
 - zsh-syntax-highlighting
 - mako (Notifications)
+- nvim (Text Editor)
 
 ## System Reqs
 - wpctl (Audio config)
