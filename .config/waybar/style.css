@@ -23,7 +23,8 @@
 
 /* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
 #workspaces,
-#cpu {
+#cpu,
+#memory{
   background-color: @Buttons;
   padding: 0.3rem 0.7rem;
   margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
@@ -35,6 +36,10 @@
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
 }
 
+#memory {
+  margin: 5px 10px;
+}
+
 #workspaces {
   padding: 0px;
   border-radius: 10px;
@@ -42,7 +47,7 @@
 
 
 /* Simple Hover effects for individual left modules - BRIGHTER COLOR */
-#cpu:hover {
+#cpu:hover, #memory:hover {
   background-color: @Buttonshover; /* Brighter highlight */
 }
 
@@ -94,7 +99,7 @@
   background-color: @Buttonshover;
 }
 
-#cpu {
+#cpu, #memory {
   color: @Text;
 }
 

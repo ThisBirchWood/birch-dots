@@ -7,7 +7,8 @@
 
   "modules-left": [
   "clock",
-  "cpu"
+  "cpu",
+  "memory"
   ],
 
   "modules-center": ["hyprland/workspaces"],
@@ -46,7 +47,10 @@
     "format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█"],
   },
 
-
+  "memory": {
+	"interval": 1,
+	"format": "{used:0.1f}G/{total:0.1f}G "
+  },
   
   "pulseaudio": {
     "format": "{icon}  {volume}%",
