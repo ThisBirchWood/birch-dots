@@ -1,8 +1,9 @@
 # Requirements
 - hyprland (Desktop Env)
+- hyprpaper (Wallpapers)
 - kitty (Terminal)
 - thunar (File Manager)
-- wofi (Application Select Menu)
+- wofi (Menus)
 - adw-gtk-theme 
 - zsh-syntax-highlighting
 - mako (Notifications)
@@ -10,6 +11,7 @@
 
 ## System Reqs
 - wpctl (Audio config)
+- imagemagick (Wallpaper caching)
 
 # Setup
 1) Ensure each requirement is installed
