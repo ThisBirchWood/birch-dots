@@ -19,7 +19,7 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # Path updates
-export PATH="$PATH:/home/dylan/.local/bin"
+export PATH=/home/dylan/.local/bin:$PATH
 export PATH=/home/dylan/.opencode/bin:$PATH
 
 # Env Variables
