@@ -43,7 +43,6 @@ inter-font
 jdk21-openjdk
 kate
 kitty
-kscreen
 kvantum-qt5
 less
 libdwarf
@@ -75,11 +74,9 @@ pavucontrol
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
-plasma-desktop
 postgresql
 postgresql-libs
 prismlauncher
-pulseaudio-alsa
 python
 python-pip
 python-pipx
