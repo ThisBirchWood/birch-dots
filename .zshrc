@@ -1,7 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-neofetch
+[[ -o interactive ]] && neofetch
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -25,4 +25,3 @@ export PATH=/home/dylan/.opencode/bin:$PATH
 # Env Variables
 export EDITOR=nvim
 export VISUAL=nvim
-source ~/powerlevel10k/powerlevel10k.zsh-theme
