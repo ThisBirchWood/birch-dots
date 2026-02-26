@@ -1,0 +1,7 @@
+vlc
+vlc-plugin-ffmpeg
+vlc-plugin-x264
+obs-studio
+gpu-screen-recorder
+gpu-screen-recorder-ui
+wf-recorder
