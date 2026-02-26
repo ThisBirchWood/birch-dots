@@ -34,6 +34,7 @@ woff2-font-awesome
 lxappearance
 kvantum-qt5
 sddm
+sddm-sugar-candy-git
 libva-nvidia-driver
 nvidia-open
 nvidia-settings
