@@ -12,7 +12,6 @@ export QT_QPA_PLATFORMTHEME=qt5ct  # for Qt5
 export QT_QPA_PLATFORMTHEME=qt6ct  # for Qt6
 
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-alias modelio="GTK_THEME=Adwaita GDK_BACKEND=x11 /opt/modelio/modelio"
 
 source ~/powerlevel10k/powerlevel10k.zsh-theme
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
