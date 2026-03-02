@@ -1,4 +1,3 @@
-firefox
 chromium
 discord
 obsidian
@@ -7,7 +6,6 @@ libreoffice-fresh
 foliate
 file-roller
 kate
-xpad
 nextcloud-client
 cmatrix
 quickshell
