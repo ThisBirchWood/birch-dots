@@ -48,3 +48,4 @@ geoclue
 imagemagick
 webkit2gtk
 xorg-xrandr
+earlyoom
