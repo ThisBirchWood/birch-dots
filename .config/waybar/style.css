@@ -1,148 +1,246 @@
-@define-color Buttons #262522;
-@define-color Buttonshover #4d4a44;
-@define-color Text #A69F92;
+/* ============================================================
+   WAYBAR STYLE — Dark Industrial / Refined Utility
+   Palette: deep charcoal base, amber accents, cool greys
+   ============================================================ */
 
-
-/* --- Global Styles --- */
+/* ── Root Variables ───────────────────────────────────────── */
+/* Fonts: install JetBrains Mono & Geist Mono via your package manager
+   e.g. yay -S ttf-jetbrains-mono ttf-geist-mono
+   or place .ttf files in ~/.local/share/fonts/ and run fc-cache -fv     */
 * {
-  font-family: "JetBrainsMono Nerd Font Propo";
-  font-size: 14px;
-  min-height: 25px;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
-}
-
-/* --- Waybar Container --- */
-#waybar {
-  background: transparent;
-  color: #c6d0f5;
-  margin: 0px;
-  font-weight: 500;
-}
-
-/* --- Left Modules (Individual, Fully Rounded Blocks - With Horizontal Spacing & Simple Hover) --- */
-#workspaces,
-#cpu,
-#memory{
-  background-color: @Buttons;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px; /* 5px top/bottom margin, 0px left/right (base for individual control) */
-  border-radius: 10px; /* These modules are always rounded */
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-  min-width: 0;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 13px;
   border: none;
-  /* Transition for background-color and color only */
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  border-radius: 0;
+
+}
+
+/* ── Bar ──────────────────────────────────────────────────── */
+window#waybar {
+  background: transparent;
+  color: #c8c8d4;
+  border-bottom: 1px solid rgba(255, 180, 60, 0.15);
+}
+
+/* ── Tooltip ──────────────────────────────────────────────── */
+tooltip {
+  background: #0e0e12;
+  border: 1px solid rgba(255, 180, 60, 0.35);
+  color: #c8c8d4;
+  padding: 6px 10px;
+}
+
+tooltip label {
+  color: #c8c8d4;
+}
+
+/* ── Shared Module Base ───────────────────────────────────── */
+#clock,
+#cpu,
+#memory,
+#pulseaudio,
+#bluetooth,
+#battery,
+#tray,
+#custom-micmute,
+#custom-power {
+  padding: 6px 12px;
+  margin: 5px 0;
+  color: #c8c8d4;
+  background: transparent;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+/* ── Separator dots between modules ──────────────────────── */
+#cpu,
+#memory,
+#pulseaudio,
+#bluetooth,
+#custom-micmute,
+#battery {
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   LEFT — System Info: Clock · CPU · Memory
+   ═══════════════════════════════════════════════════════════ */
+
+#clock {
+  font-family: 'Geist Mono', monospace;
+  font-weight: 400;
+  font-size: 12.5px;
+  color: #e8d5a3;
+  letter-spacing: 0.04em;
+  padding-left: 16px;
+  border-left: 3px solid rgba(255, 180, 60, 0.6);
+}
+
+#cpu {
+  color: #a0c4d8;
+}
+
+#cpu:hover {
+  color: #c8e8f8;
+  background: rgba(160, 196, 216, 0.08);
 }
 
 #memory {
-  margin: 5px 10px;
+  color: #9dbfad;
 }
+
+#memory:hover {
+  color: #bcdece;
+  background: rgba(157, 191, 173, 0.08);
+}
+
+
+/* ═══════════════════════════════════════════════════════════
+   CENTER — Workspaces
+   ═══════════════════════════════════════════════════════════ */
 
 #workspaces {
-  padding: 0px;
-  border-radius: 10px;
-}
-
-
-/* Simple Hover effects for individual left modules - BRIGHTER COLOR */
-#cpu:hover, #memory:hover {
-  background-color: @Buttonshover; /* Brighter highlight */
+  margin: 0;
+  padding: 0;
+  background: transparent;
 }
 
 #workspaces button {
-  color: @Text;
-  border-radius: 10px; /* Workspaces buttons are always rounded */
-  padding: 0.3rem 0.6rem;
-  background: transparent;
-  transition: all 0.2s ease-in-out;
-  border: none;
-  outline: none;
-}
-
-#workspaces button.active {
-  color: @Text;
-  background-color: rgba(153, 209, 219, 0.1);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 12px;
+  padding: 2px 10px;
+  margin: 4px 2px;
+  color: #5a5a6e;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid transparent;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+  min-width: 32px;
 }
 
 #workspaces button:hover {
-  background: @Buttonshover; /* Reference bright hover color */
-  color: @Text;
+  color: #b0b0c8;
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
-/* --- Center Module (Individual, Fully Rounded Block - With Simple Hover) --- */
-#clock {
-  background-color: @Buttons;
-  padding: 0.3rem 0.7rem;
-  margin: 5px 0px;
-  margin-left: 7px;
-  margin-right: 10px;
-  border-radius: 10px; /* This module is always rounded */
-  min-width: 0;
-  border: none;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+#workspaces button.active {
+  color: #f0c060;
+  background: rgba(255, 180, 60, 0.1);
+  border-color: rgba(255, 180, 60, 0.4);
+  font-weight: 600;
+}
+
+#workspaces button.urgent {
+  color: #f08080;
+  background: rgba(240, 80, 80, 0.12);
+  border-color: rgba(240, 80, 80, 0.4);
 }
 
 
-/* Simple Hover effect for clock module - BRIGHTER COLOR */
-#clock:hover {
-  background-color: @Buttonshover; /* Brighter highlight */
+/* ═══════════════════════════════════════════════════════════
+   RIGHT — Audio · Bluetooth · Mic · Battery · Power
+   ═══════════════════════════════════════════════════════════ */
+
+/* ── Tray ─────────────────────────────────────────────────── */
+#tray {
+  padding: 2px 10px;
 }
 
-/* --- Right Modules (Single, Seamless Bar ) --- */
-#custom-power:hover,
-#pulseaudio:hover,
-#battery:hover,
-#tray:hover,
+#tray > .passive {
+  -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
+  background-color: rgba(240, 120, 60, 0.2);
+}
+
+/* ── Audio ────────────────────────────────────────────────── */
+#pulseaudio {
+  color: #b0a8d8;
+}
+
+#pulseaudio:hover {
+  color: #d0c8f8;
+  background: rgba(176, 168, 216, 0.08);
+}
+
+#pulseaudio.muted {
+  color: #4a4a5e;
+}
+
+/* ── Bluetooth ────────────────────────────────────────────── */
+#bluetooth {
+  color: #80b8e0;
+}
+
+#bluetooth.connected {
+  color: #60d0ff;
+}
+
+#bluetooth:hover {
+  background: rgba(128, 184, 224, 0.08);
+}
+
+/* ── Microphone Mute ──────────────────────────────────────── */
+#custom-micmute {
+  color: #9dbfad;
+}
+
+#custom-micmute.muted {
+  color: #4a4a5e;
+}
+
 #custom-micmute:hover {
-  background-color: @Buttonshover;
+  background: rgba(157, 191, 173, 0.08);
 }
 
-#cpu, #memory {
-  color: @Text;
-}
-
-#clock {
-  color: @Text;
-  font-weight: 500;
-}
-
-
-#tray, #battery, #pulseaudio, #custom-power, #custom-micmute {
-  background-color: @Buttons;
-  color: @Text;
-  border-radius: 10px;
-  padding: 0.7rem;
-  margin: 0.35rem;
-  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
-}
-
-#custom-power {
-  margin-right: 11px;
-}
-
+/* ── Battery ──────────────────────────────────────────────── */
 #battery {
-  color: @Text;
+  color: #a8cc88;
 }
-#battery.charging {
-  color: @Text;
+
+#battery.charging,
+#battery.plugged {
+  color: #c8e888;
 }
+
 #battery.warning:not(.charging) {
-  color: @Text;
+  color: #e8c060;
 }
 
-
-/* --- Tooltip Styles --- */
-tooltip {
-  background-color: #1a1b26;
-  color: #dddddd;
-  padding: 5px 12px;
-  margin: 5px 0px;
-  border-radius: 6px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-size: 12px;
+#battery.critical:not(.charging) {
+  color: #f07060;
+  animation: battery-pulse 1.5s ease-in-out infinite;
 }
 
+@keyframes battery-pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
+#battery:hover {
+  background: rgba(168, 204, 136, 0.08);
+}
+
+/* ── Power Button ─────────────────────────────────────────── */
+#custom-power {
+  color: #c06060;
+  font-size: 14px;
+  padding: 2px 14px 2px 12px;
+  margin-right: 4px;
+  border-left: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+#custom-power:hover {
+  color: #f08080;
+  background: rgba(200, 60, 60, 0.15);
+}
