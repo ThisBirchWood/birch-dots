@@ -1,6 +1,5 @@
 git
 neovim
-vim
 tmux
 fzf
 btop
@@ -13,12 +12,13 @@ python
 python-pip
 python-pipx
 python-pydbus
+python-virtualenv
 npm
 jdk21-openjdk
 maven
 openmpi
 docker
-docker-compose
+docker-compose-plugin
 postgresql
 postgresql-libs
 libdwarf

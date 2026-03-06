@@ -1,5 +1,4 @@
 visual-studio-code-bin
 intellij-idea-ultimate-edition
 bruno
-yay
-jre
+jre-openjdk

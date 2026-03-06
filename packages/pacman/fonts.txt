@@ -1,0 +1,10 @@
+inter-font
+ttf-0xproto-nerd
+ttf-jetbrains-mono-nerd
+ttf-noto-nerd
+woff2-font-awesome
+noto-fonts
+noto-fonts-emoji
+noto-fonts-cjk
+ttf-dejavu
+ttf-liberation

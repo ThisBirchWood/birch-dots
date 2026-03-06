@@ -1,8 +1,5 @@
 hyprland
 hyprpaper
-hyprcursor
-hyprlang
-hyprutils
 waybar
 wofi
 mako
@@ -19,6 +16,7 @@ pavucontrol
 pipewire-alsa
 pipewire-jack
 pipewire-pulse
+wireplumber
 xdg-desktop-portal-hyprland
 xdg-desktop-portal-wlr
 qt5ct
@@ -26,11 +24,6 @@ qt6ct
 qt6-wayland
 adw-gtk-theme
 breeze
-inter-font
-ttf-0xproto-nerd
-ttf-jetbrains-mono-nerd
-ttf-noto-nerd
-woff2-font-awesome
 lxappearance
 kvantum-qt5
 sddm
@@ -38,6 +31,7 @@ libva-nvidia-driver
 nvidia-open
 nvidia-settings
 nvidia-utils
+lib32-nvidia-utils
 sof-firmware
 alsa-utils
 blueman

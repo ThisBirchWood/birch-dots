@@ -1,11 +1,7 @@
-chromium
 discord
 obsidian
 anki
 libreoffice-fresh
-foliate
 file-roller
 kate
 nextcloud-client
-cmatrix
-quickshell
