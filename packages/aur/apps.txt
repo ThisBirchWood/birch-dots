@@ -1,0 +1,4 @@
+brave-bin
+play-timer
+spotify
+zoom
