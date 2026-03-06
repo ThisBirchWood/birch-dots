@@ -229,7 +229,7 @@ tooltip label {
   font-size: 14px;
   padding: 2px 14px 2px 12px;
   margin-right: 8px;
-  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  border-right: 3px solid rgba(255, 0, 0, 0.3);
 }
 
 #custom-power:hover {
