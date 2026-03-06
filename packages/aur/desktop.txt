@@ -1,1 +1,2 @@
 sddm-sugar-candy-git
+wlogout
