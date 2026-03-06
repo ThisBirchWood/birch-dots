@@ -4,34 +4,29 @@
    ============================================================ */
 
 /* ── Root Variables ───────────────────────────────────────── */
-/* Fonts: install JetBrains Mono & Geist Mono via your package manager
-   e.g. yay -S ttf-jetbrains-mono ttf-geist-mono
-   or place .ttf files in ~/.local/share/fonts/ and run fc-cache -fv     */
 * {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: "JetBrainsMono Nerd Font Propo";
   font-size: 13px;
   border: none;
   border-radius: 0;
-
 }
 
 /* ── Bar ──────────────────────────────────────────────────── */
 window#waybar {
-  background: transparent;
-  color: #c8c8d4;
-  border-bottom: 1px solid rgba(255, 180, 60, 0.15);
+  background: rgba(10, 10, 14, 0);
+  color: #dcdce8;
 }
 
 /* ── Tooltip ──────────────────────────────────────────────── */
 tooltip {
   background: #0e0e12;
   border: 1px solid rgba(255, 180, 60, 0.35);
-  color: #c8c8d4;
+  color: #dcdce8;
   padding: 6px 10px;
 }
 
 tooltip label {
-  color: #c8c8d4;
+  color: #dcdce8;
 }
 
 /* ── Shared Module Base ───────────────────────────────────── */
@@ -46,8 +41,8 @@ tooltip label {
 #custom-power {
   padding: 6px 12px;
   margin: 5px 0;
-  color: #c8c8d4;
-  background: transparent;
+  color: #dcdce8;
+  background: rgba(10, 10, 14, 0.3);
   transition: color 0.2s ease, background 0.2s ease;
 }
 
@@ -58,7 +53,7 @@ tooltip label {
 #bluetooth,
 #custom-micmute,
 #battery {
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  border-left: 1px solid rgba(255, 255, 255, 0);
 }
 
 
@@ -67,31 +62,32 @@ tooltip label {
    ═══════════════════════════════════════════════════════════ */
 
 #clock {
-  font-family: 'Geist Mono', monospace;
+  font-family: "JetBrainsMono Nerd Font Propo";
   font-weight: 400;
   font-size: 12.5px;
-  color: #e8d5a3;
+  color: #f0de9c;
   letter-spacing: 0.04em;
-  padding-left: 16px;
-  border-left: 3px solid rgba(255, 180, 60, 0.6);
+  padding-left: 0.4em;
+  border-left: 3px solid rgba(255, 180, 60, 0.3);
+  margin-left: 8px;
 }
 
 #cpu {
-  color: #a0c4d8;
+  color: #b8d8ee;
 }
 
 #cpu:hover {
-  color: #c8e8f8;
-  background: rgba(160, 196, 216, 0.08);
+  color: #d8f0ff;
+  background: rgba(160, 196, 216, 0.14);
 }
 
 #memory {
-  color: #9dbfad;
+  color: #b0d4be;
 }
 
 #memory:hover {
-  color: #bcdece;
-  background: rgba(157, 191, 173, 0.08);
+  color: #ceeede;
+  background: rgba(157, 191, 173, 0.14);
 }
 
 
@@ -106,12 +102,12 @@ tooltip label {
 }
 
 #workspaces button {
-  font-family: 'JetBrains Mono', monospace;
+  font-family: 'JetBrains Nerd Font Propo';
   font-size: 12px;
   padding: 2px 10px;
   margin: 4px 2px;
-  color: #5a5a6e;
-  background: rgba(255, 255, 255, 0.03);
+  color: #6e6e88;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid transparent;
   border-radius: 3px;
   transition: all 0.15s ease;
@@ -119,22 +115,22 @@ tooltip label {
 }
 
 #workspaces button:hover {
-  color: #b0b0c8;
-  background: rgba(255, 255, 255, 0.07);
-  border-color: rgba(255, 255, 255, 0.1);
+  color: #c0c0d8;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.15);
 }
 
 #workspaces button.active {
   color: #f0c060;
-  background: rgba(255, 180, 60, 0.1);
-  border-color: rgba(255, 180, 60, 0.4);
+  background: rgba(255, 180, 60, 0.14);
+  border-color: rgba(255, 180, 60, 0.5);
   font-weight: 600;
 }
 
 #workspaces button.urgent {
   color: #f08080;
-  background: rgba(240, 80, 80, 0.12);
-  border-color: rgba(240, 80, 80, 0.4);
+  background: rgba(240, 80, 80, 0.15);
+  border-color: rgba(240, 80, 80, 0.45);
 }
 
 
@@ -153,61 +149,57 @@ tooltip label {
 
 #tray > .needs-attention {
   -gtk-icon-effect: highlight;
-  background-color: rgba(240, 120, 60, 0.2);
+  background-color: rgba(240, 120, 60, 0.25);
 }
 
 /* ── Audio ────────────────────────────────────────────────── */
 #pulseaudio {
-  color: #b0a8d8;
+  color: #c4bce8;
 }
 
 #pulseaudio:hover {
-  color: #d0c8f8;
-  background: rgba(176, 168, 216, 0.08);
-}
-
-#pulseaudio.muted {
-  color: #4a4a5e;
+  color: #e0d8ff;
+  background: rgba(176, 168, 216, 0.14);
 }
 
 /* ── Bluetooth ────────────────────────────────────────────── */
 #bluetooth {
-  color: #80b8e0;
+  color: #90c8f0;
 }
 
 #bluetooth.connected {
-  color: #60d0ff;
+  color: #70d8ff;
 }
 
 #bluetooth:hover {
-  background: rgba(128, 184, 224, 0.08);
+  background: rgba(128, 184, 224, 0.14);
 }
 
 /* ── Microphone Mute ──────────────────────────────────────── */
 #custom-micmute {
-  color: #9dbfad;
+  color: #b0d4be;
 }
 
 #custom-micmute.muted {
-  color: #4a4a5e;
+  color: #585870;
 }
 
 #custom-micmute:hover {
-  background: rgba(157, 191, 173, 0.08);
+  background: rgba(157, 191, 173, 0.14);
 }
 
 /* ── Battery ──────────────────────────────────────────────── */
 #battery {
-  color: #a8cc88;
+  color: #b8dc98;
 }
 
 #battery.charging,
 #battery.plugged {
-  color: #c8e888;
+  color: #d4f098;
 }
 
 #battery.warning:not(.charging) {
-  color: #e8c060;
+  color: #eecb68;
 }
 
 #battery.critical:not(.charging) {
@@ -228,19 +220,19 @@ tooltip label {
 }
 
 #battery:hover {
-  background: rgba(168, 204, 136, 0.08);
+  background: rgba(168, 204, 136, 0.14);
 }
 
 /* ── Power Button ─────────────────────────────────────────── */
 #custom-power {
-  color: #c06060;
+  color: #d07070;
   font-size: 14px;
   padding: 2px 14px 2px 12px;
-  margin-right: 4px;
-  border-left: 1px solid rgba(255, 255, 255, 0.06);
+  margin-right: 8px;
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 #custom-power:hover {
-  color: #f08080;
-  background: rgba(200, 60, 60, 0.15);
+  color: #f09090;
+  background: rgba(200, 60, 60, 0.2);
 }
