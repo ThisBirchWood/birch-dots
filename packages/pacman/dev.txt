@@ -21,7 +21,6 @@ docker
 docker-compose-plugin
 postgresql
 postgresql-libs
-libdwarf
 nmap
 ncdu
 ufw
