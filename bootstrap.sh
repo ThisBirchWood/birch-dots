@@ -53,8 +53,7 @@ EOF
 # 2. NETWORKING
 # =============================================================================
 
-log "Installing and enabling NetworkManager"
-sudo pacman -S networkmanager
+log "Enabling NetworkManager"
 sudo systemctl enable --now NetworkManager
 
 # =============================================================================
@@ -64,6 +63,9 @@ sudo systemctl enable --now NetworkManager
 log "Configuring pacman (colour + parallel downloads)"
 sudo sed -i 's/^#Color/Color/' /etc/pacman.conf
 sudo sed -i 's/^#ParallelDownloads.*/ParallelDownloads = 5/' /etc/pacman.conf
+
+log "Enabling multilib repo"
+sudo sed -i '/\[multilib\]/,/Include/s/^#//' /etc/pacman.conf
 
 log "Updating mirrors and syncing package database"
 sudo pacman -Sy --noconfirm reflector 2>/dev/null || true
@@ -79,9 +81,11 @@ sudo pacman -Syyu --noconfirm
 log "Installing pacman packages"
 for file in "$PKG_DIR"/pacman/*.txt; do
     log "  → $(basename "$file")"
-    # base/linux/base-devel already installed; --needed skips them safely
-    sudo pacman -S --needed --noconfirm - < "$file" || \
-        warn "Some packages in $(basename "$file") failed — continuing"
+    while IFS= read -r pkg; do
+        [[ -z "$pkg" || "$pkg" == \#* ]] && continue
+        sudo pacman -S --needed --noconfirm "$pkg" \
+            || warn "  Skipping pacman package not found: $pkg"
+    done < "$file"
 done
 
 # =============================================================================
@@ -114,8 +118,11 @@ fi
 log "Installing AUR packages"
 for file in "$PKG_DIR"/aur/*.txt; do
     log "  → $(basename "$file")"
-    yay -S --needed --noconfirm - < "$file" || \
-        warn "Some AUR packages in $(basename "$file") failed — continuing"
+    while IFS= read -r pkg; do
+        [[ -z "$pkg" || "$pkg" == \#* ]] && continue
+        yay -S --needed --noconfirm "$pkg" \
+            || warn "  Skipping AUR package not found: $pkg"
+    done < "$file"
 done
 
 # =============================================================================
@@ -167,6 +174,7 @@ sudo systemctl enable sddm
 # =============================================================================
 
 log "Enabling system services"
+sudo systemctl enable bluetooth
 sudo systemctl enable docker
 sudo usermod -aG docker "$USER"
 sudo systemctl enable earlyoom 2>/dev/null || true
