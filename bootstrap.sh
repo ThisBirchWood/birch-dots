@@ -166,7 +166,6 @@ sudo systemctl enable sddm
 # =============================================================================
 
 log "Enabling system services"
-sudo systemctl enable bluetooth
 sudo systemctl enable docker
 sudo usermod -aG docker "$USER"
 sudo systemctl enable earlyoom 2>/dev/null || true
