@@ -53,7 +53,8 @@ EOF
 # 2. NETWORKING
 # =============================================================================
 
-log "Enabling NetworkManager"
+log "Installing and enabling NetworkManager"
+sudo pacman -S networkmanager
 sudo systemctl enable --now NetworkManager
 
 # =============================================================================
