@@ -19,7 +19,7 @@ jdk21-openjdk
 maven
 openmpi
 docker
-docker-compose-plugin
+docker-compose
 postgresql
 postgresql-libs
 nmap
