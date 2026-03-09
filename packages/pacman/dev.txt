@@ -27,3 +27,4 @@ ncdu
 ufw
 sshfs
 nvidia-container-toolkit
+rsync
