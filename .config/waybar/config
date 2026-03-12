@@ -16,6 +16,7 @@
   "modules-right": [
     "tray",
     "pulseaudio",
+    "bluetooth",
     "custom/micmute",
     "battery",
     "custom/power"
@@ -60,6 +61,16 @@
     },
     "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
     "on-click-right": "pavucontrol"
+  },
+
+  "bluetooth": {
+    "format": "󰂯 {num_connections}",
+    "format-connected": "󰂱 {num_connections}",
+    "format-disabled": "󰂲",
+    "tooltip-format-connected": "{device_enumerate}",
+    "tooltip-format-enumerate-connected": "󰂱 {device_alias} ({device_battery_percentage}%)",
+    "on-click": "blueman-manager",
+    "on-click-right": "bluectl power toggle"
   },
 
   "battery": {
