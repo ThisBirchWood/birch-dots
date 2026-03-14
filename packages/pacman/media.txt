@@ -5,3 +5,4 @@ obs-studio
 gpu-screen-recorder
 gpu-screen-recorder-ui
 wf-recorder
+yt-dlp
