@@ -1,8 +1,0 @@
-{
-    "explorer.confirmDragAndDrop": false,
-    "python.defaultInterpreterPath": "/sbin/python3.14",
-    "git.autofetch": true,
-    "explorer.confirmDelete": false,
-    "git.confirmSync": false,
-    "editor.fontSize": 12
-}
