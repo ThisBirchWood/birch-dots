@@ -3,7 +3,7 @@ hl.config({
         kb_layout = "ie",
         follow_mouse = 1,
         accel_profile = "flat",
-        sensitivity = 0.75,
+        sensitivity = 0,
         touchpad = {
             natural_scroll = true,
             scroll_factor = 0.45,
