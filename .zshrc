@@ -1,24 +1,26 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+# INSTANT PROMPT
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Environment for apps
-export QT_QPA_PLATFORMTHEME=qt5ct  # for Qt5
-export QT_QPA_PLATFORMTHEME=qt6ct  # for Qt6
+# PATH
+export PATH="$HOME/.local/bin:$HOME/.opencode/bin:$PATH"
 
-alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
-
-source ~/powerlevel10k/powerlevel10k.zsh-theme
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# Path updates
-export PATH="$HOME/.local/bin:$PATH"
-export PATH="$HOME/.opencode/bin:$PATH"
-
-# Env Variables
+# ENVIRONMENT
 export EDITOR=nvim
 export VISUAL=nvim
+export QT_QPA_PLATFORMTHEME=qt6ct   # Qt6 apps
+
+# ALIASES
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+
+# COMPLETION (before plugins that hook into it)
+autoload -Uz compinit && compinit
+
+# PLUGINS
+source ~/powerlevel10k/powerlevel10k.zsh-theme
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh  # keep LAST
+
+# THEME CONFIG (after theme is loaded)
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
