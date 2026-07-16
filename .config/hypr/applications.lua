@@ -7,7 +7,7 @@ hl.window_rule({
     opacity = "0.75 0.6",
 })
 
--- Workspace
+-- Workspaces
 hl.window_rule({
     workspace = "1",
     match = {
