@@ -1,47 +1,61 @@
+/* wallpaper.sh picker — dark glass, cyan accent */
+
 window {
-    background-color: #1e1e2e;
-    border-radius: 8px;
-    border: 2px solid #313244;
+    background-color: rgba(16, 18, 27, 0.88);
+    border: 1px solid rgba(122, 162, 247, 0.35);
+    border-radius: 16px;
+    font-family: "JetBrainsMono Nerd Font", monospace;
 }
 
 #input {
-    margin: 2px;
-    padding: 4px;
-    border-radius: 4px;
-    border: none;
-    background-color: #313244;
-    color: #cdd6f4;
+    margin: 12px;
+    padding: 10px 14px;
+    border: 1px solid rgba(122, 162, 247, 0.25);
+    border-radius: 10px;
+    background-color: rgba(26, 29, 42, 0.9);
+    color: #c0caf5;
+    font-size: 15px;
+}
+
+#input:focus {
+    border-color: rgba(125, 207, 255, 0.8);
 }
 
 #inner-box {
-  margin: 0px;
+    margin: 6px 12px 12px 12px;
+    background-color: transparent;
 }
 
 #outer-box {
-  margin: 0px;
+    background-color: transparent;
 }
 
 #scroll {
-  margin: 0px;
-}
-
-#text {
-  margin: 2px;
-  color: #cdd6f4;
+    margin: 0px;
 }
 
 #entry {
-  padding: 2px;
-  margin: 0px;
-  border-radius: 4px;
+    margin: 6px;
+    padding: 6px;
+    border: 2px solid transparent;
+    border-radius: 12px;
+    background-color: rgba(36, 40, 59, 0.5);
 }
 
 #entry:selected {
-  background-color: #313244;
+    border-color: #7dcfff;
+    background-color: rgba(125, 207, 255, 0.15);
 }
 
-#img {
-  margin: 2px;
-  padding-left: 4px;
-  border-radius: 4px;
+#entry image {
+    border-radius: 8px;
+}
+
+#text {
+    color: #c0caf5;
+    margin: 0px 4px;
+}
+
+#entry:selected #text {
+    color: #ffffff;
 }
