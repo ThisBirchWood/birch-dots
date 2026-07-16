@@ -1,66 +1,83 @@
-/* ========================
-   Wofi Lovely Theme
-   ======================== */
+/* ~/.config/wofi/style.css */
 
-/* Window styling */
+@define-color base    #1e1e2e;
+@define-color mantle  #181825;
+@define-color surface #313244;
+@define-color overlay #6c7086;
+@define-color text    #cdd6f4;
+@define-color subtext #a6adc8;
+@define-color blue    #89b4fa;
+@define-color lavndr  #b4befe;
+
 window {
-    background-color: #1e1e2e; /* Dark blue-ish background */
-    border-radius: 12px;
-    padding: 10px;
-    border: 1px solid #44475a;
+  background-color: transparent;
+  font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+  font-size: 14px;
 }
 
-/* Entry box styling */
-entry {
-    font-family: "JetBrains Mono", monospace;
-    font-size: 16px;
-    color: #f8f8f2; /* light text */
-    padding: 8px 10px;
-    border-radius: 8px;
-    background-color: #2e2e3e; /* darker input box */
-    border: 1px solid #6272a4;
+#outer-box {
+  background-color: @base;
+  border: 2px solid @surface;
+  border-radius: 14px;
+  padding: 12px;
 }
 
-/* Selected suggestion */
-row:selected {
-    background-color: #6272a4;
-    color: #f8f8f2;
+#input {
+  background-color: @mantle;
+  color: @text;
+  border: 1px solid @surface;
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-bottom: 10px;
+  caret-color: @blue;
 }
 
-/* Suggestions list */
-row {
-    padding: 6px 10px;
-    border-radius: 6px;
-    margin: 2px 0;
-    transition: background 0.2s ease;
+#input:focus {
+  border-color: @blue;
 }
 
-/* Icon styling */
-image {
-    width: 32px;  /* smaller icons */
-    height: 32px;
-    margin-right: 10px;
+#scroll {
+  margin: 0;
+  border: none;
 }
 
-/* Scrollbar styling */
-scrollbar {
-    background-color: #1e1e2e;
-    width: 6px;
-    border-radius: 3px;
+#inner-box {
+  background-color: transparent;
 }
 
-scrollbar slider {
-    background-color: #6272a4;
-    border-radius: 3px;
+#entry {
+  padding: 8px 10px;
+  border-radius: 8px;
+  margin: 2px 0;
+  color: @subtext;
+  transition: background-color 120ms ease, color 120ms ease;
 }
 
-/* Hint text */
-entry placeholder {
-    color: #bfbfbf;
+#entry:selected,
+#entry:hover {
+  background-color: @surface;
+  color: @text;
+  outline: none;
 }
 
-/* For accessibility: highlight keyboard navigation */
-row:focus {
-    outline: 2px solid #ff79c6;
+#entry:selected {
+  box-shadow: inset 3px 0 0 0 @lavndr;
 }
 
+/* node type `image`, not `img` — this is the one that actually moves the icon */
+#entry image {
+  margin-right: 18px;
+  -gtk-icon-transform: scale(0.9);
+}
+
+#entry #text {
+  color: inherit;
+}
+
+#entry:selected #text {
+  font-weight: 600;
+}
+
+#unselected {
+  color: @subtext;
+}
