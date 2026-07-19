@@ -13,6 +13,7 @@ export QT_QPA_PLATFORMTHEME=qt6ct   # Qt6 apps
 
 # ALIASES
 alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias pac="sudo pacman -S"
 
 # COMPLETION (before plugins that hook into it)
 autoload -Uz compinit && compinit
