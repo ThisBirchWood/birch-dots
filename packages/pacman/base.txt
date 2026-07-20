@@ -20,3 +20,4 @@ unzip
 zip
 zsh
 zsh-syntax-highlighting
+zsh-autosuggestions
