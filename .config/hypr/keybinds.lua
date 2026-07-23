@@ -70,8 +70,5 @@ hl.bind("ALT" .. " + " .. "TAB", hl.dsp.window.cycle_next(), { description = "Cy
 hl.bind("SUPER" .. " + " .. "F", hl.dsp.exec_cmd(fileManager), { description = "File manager" })
 hl.bind("SUPER" .. " + " .. "D", hl.dsp.exec_cmd(menu), { description = "App launcher" })
 hl.bind("SUPER" .. " + " .. "B", hl.dsp.exec_cmd(browser), { description = "Browser" })
-hl.bind(
-    "SUPER + SHIFT + S",
-    hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'),
-    { description = "Screenshot region to clipboard" }
-)
+hl.bind("SUPER + SHIFT + S", hl.dsp.exec_cmd('grim -g "$(slurp -d)" - | wl-copy'), { description = "Screenshot region to clipboard" })
+hl.bind(mainMod .. " + slash", hl.dsp.exec_cmd(os.getenv("HOME") .. "/.config/hypr/scripts/show-binds.sh"), { description = "Show keybind cheat sheet" })
