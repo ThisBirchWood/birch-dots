@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-hyprctl -j binds | jq -r '
+DATA=$(hyprctl -j binds | jq -r '
   def mods(m):
     [ if m >= 64 then "SUPER" else empty end,
       if (m % 16) >= 8 then "ALT" else empty end,
@@ -11,9 +11,16 @@ hyprctl -j binds | jq -r '
   | sort_by(.k)
   | (map(.k | length) | max) as $w
   | .[] | "\(.k + (" " * ($w - (.k | length))))  \(.d)"
-' | pr -2 -t -w 160 \
-  | yad --text-info \
-        --title="Hyprland Keybinds" \
-        --width=1250 --height=560 --center \
-        --fontname="monospace 10" \
-        --no-buttons --wrap=false
+')
+
+COLS=$(awk '{ if (length > m) m = length } END { print m }' <<< "$DATA")
+ROWS=$(wc -l <<< "$DATA")
+
+PRW=$(( COLS * 2 + 4 ))
+PX=$(( PRW * 7 + 60 ))
+PY=$(( (ROWS / 2 + 2) * 18 + 60 ))
+
+pr -2 -t -w "$PRW" <<< "$DATA" \
+  | yad --text-info --title="Hyprland Keybinds" \
+        --width="$PX" --height="$PY" --center \
+        --fontname="monospace 10" --no-buttons --wrap=false
