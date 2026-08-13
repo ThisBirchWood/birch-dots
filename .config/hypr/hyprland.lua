@@ -16,7 +16,9 @@ hl.config({
 
 -- Envs
 hl.env("XCURSOR_SIZE", 24)
+hl.env("XCUROSR_THEME", "breeze-dark")
 hl.env("HYPRCURSOR_SIZE", 24)
+hl.env("HYPRCURSOR_THEME", "breeze-dark")
 hl.env("LIBVA_DRIVER_NAME", "nvidia")
 hl.env("__GLX_VENDOR_LIBRARY_NAME", "nvidia")
 hl.env("NVD_BACKEND", "direct")
@@ -36,6 +38,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("nextcloud")
     hl.exec_cmd("waybar")
     hl.exec_cmd("hyprctl setcursor breeze 24")
+    hl.exec_cmd("xsettingsd")
 end)
 
 -- Exec (run every reload)
