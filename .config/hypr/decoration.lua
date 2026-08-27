@@ -48,9 +48,9 @@ hl.config({
         enabled = true,
     },
 })
-hl.curve("myBezier", { type = "bezier", points = { {0.05, 0.9}, {0.1, 1.05} } })
-hl.animation({ leaf = "windows",     enabled = true, speed = 2, bezier = "myBezier" })
-hl.animation({ leaf = "windowsOut",  enabled = true, speed = 2, bezier = "myBezier", style = "popin 80%" })
-hl.animation({ leaf = "border",      enabled = true, speed = 3, bezier = "myBezier" })
-hl.animation({ leaf = "fade",        enabled = true, speed = 2, bezier = "myBezier" })
-hl.animation({ leaf = "workspaces",  enabled = true, speed = 2, bezier = "myBezier" })
+hl.curve("myBezier", { type = "bezier", points = { {0.16, 1}, {0.3, 1} } })
+hl.animation({ leaf = "windows",     enabled = true, speed = 1.8, bezier = "myBezier" })
+hl.animation({ leaf = "windowsOut",  enabled = true, speed = 1.6, bezier = "myBezier", style = "popin 90%" })
+hl.animation({ leaf = "border",      enabled = true, speed = 2.5, bezier = "myBezier" })
+hl.animation({ leaf = "fade",        enabled = true, speed = 1.8, bezier = "myBezier" })
+hl.animation({ leaf = "workspaces",  enabled = true, speed = 1.8, bezier = "myBezier" })
