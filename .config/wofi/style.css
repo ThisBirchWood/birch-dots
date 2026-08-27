@@ -1,50 +1,43 @@
 /* ~/.config/wofi/style.css */
-
-@define-color base    #1e1e2e;
-@define-color mantle  #181825;
-@define-color surface #313244;
-@define-color overlay #6c7086;
-@define-color text    #cdd6f4;
-@define-color subtext #a6adc8;
-@define-color blue    #89b4fa;
-@define-color lavndr  #b4befe;
+@define-color base    rgba(26, 22, 19, 0.75);
+@define-color mantle  rgba(20, 17, 14, 0.7);
+@define-color surface rgba(232, 221, 208, 0.1);
+@define-color overlay #8a7a68;
+@define-color text    #e8ddd0;
+@define-color subtext #c9baa8;
+@define-color accent  #e29a6e;
+@define-color accent2 #c46c4a;
 
 window {
   background-color: transparent;
-  font-family: "JetBrainsMono Nerd Font", "Inter", sans-serif;
+  font-family: "Inter", "SF Pro Display", "Segoe UI", sans-serif;
   font-size: 14px;
 }
-
 #outer-box {
   background-color: @base;
-  border: 2px solid @surface;
+  border: 1px solid rgba(226, 154, 110, 0.35);
   border-radius: 14px;
   padding: 12px;
 }
-
 #input {
   background-color: @mantle;
   color: @text;
-  border: 1px solid @surface;
+  border: 1px solid rgba(232, 221, 208, 0.12);
   border-radius: 10px;
   padding: 10px 14px;
   margin-bottom: 10px;
-  caret-color: @blue;
+  caret-color: @accent;
 }
-
 #input:focus {
-  border-color: @blue;
+  border-color: @accent;
 }
-
 #scroll {
   margin: 0;
   border: none;
 }
-
 #inner-box {
   background-color: transparent;
 }
-
 #entry {
   padding: 8px 10px;
   border-radius: 8px;
@@ -52,32 +45,26 @@ window {
   color: @subtext;
   transition: background-color 120ms ease, color 120ms ease;
 }
-
 #entry:selected,
 #entry:hover {
   background-color: @surface;
   color: @text;
   outline: none;
 }
-
 #entry:selected {
-  box-shadow: inset 3px 0 0 0 @lavndr;
+  box-shadow: inset 3px 0 0 0 @accent;
 }
-
 /* node type `image`, not `img` — this is the one that actually moves the icon */
 #entry image {
   margin-right: 18px;
   -gtk-icon-transform: scale(0.9);
 }
-
 #entry #text {
   color: inherit;
 }
-
 #entry:selected #text {
   font-weight: 600;
 }
-
 #unselected {
   color: @subtext;
 }
